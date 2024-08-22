@@ -21,6 +21,40 @@
             margin-bottom: 1.5em;
             border-left: 4px solid #007bff;
         }
+
+        .edit-prompt {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            outline: none;
+            color: #333;
+        }
+
+        .edit-prompt:focus {
+            background-color: #f8f9fa;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 1em 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 5px solid #007bff;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -35,7 +69,7 @@
                         <h3 class="card-title text-center">Generate Content using Google Gemini API</h3>
 
                         <div id="generated-content" class="mt-4">
-                            <!-- The generated content will be displayed here -->
+                            <!-- The generated content with editable prompts will be displayed here -->
                         </div>
 
                         <div id="loader" class="text-center" style="display:none;">
@@ -60,6 +94,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 <a href="mailto:najmulhasansobuj87@gmail.com">Najmul Hasan</a></p>
+    </footer>
 
     <!-- MDBootstrap JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
@@ -117,10 +155,13 @@
                             .replace(/\* (.*?)(?=\n|$)/g, '<li>$1</li>') // List items
                             .replace(/\n/g, '<br>'); // Replace new lines with <br> for proper line breaks
 
-                        // Create a new section for the generated content with timestamp
+                        // Create a new section for the generated content with timestamp and editable prompt
                         const contentSection = `
                             <div class="alert alert-light mt-3">
                                 <strong>${dateString} ${timeString}</strong>
+                                <div>
+                                    <input type="text" class="edit-prompt" value="${prompt}">
+                                </div>
                                 <div>${formattedText}</div>
                             </div>
                         `;
