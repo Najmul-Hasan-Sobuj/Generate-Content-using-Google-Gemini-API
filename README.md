@@ -1,6 +1,3 @@
-Here’s a professional Markdown file (`README.md`) for your project, organized section-wise:
-
-```markdown
 # Google Gemini API Content Generator
 
 This project provides a web-based interface that allows users to generate content using the Google Gemini API. The generated content is displayed with editable user prompts, enabling seamless modifications. A modern footer with contact information is also included for a polished user experience.
@@ -124,7 +121,6 @@ For any inquiries, please contact:
 - **Najmul Hasan**
 - **Email**: [najmulhasansobuj87@gmail.com](mailto:najmulhasansobuj87@gmail.com)
 
-```
 
 ### Key Sections:
 1. **Features**: Summarizes the main functionalities of the project.
